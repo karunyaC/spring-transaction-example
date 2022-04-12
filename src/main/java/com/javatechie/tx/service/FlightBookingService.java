@@ -33,7 +33,7 @@ public class FlightBookingService {
 
         PaymentUtils.validateCreditLimit(paymentInfo.getAccountNo(), passengerInfo.getFare());
 
-        paymentInfo.setPassengerId(passengerInfo.getPId());
+        paymentInfo.setPassengerId(passengerInfo.getpId());
         paymentInfo.setAmount(passengerInfo.getFare());
         paymentInfoRepository.save(paymentInfo);
         return new FlightBookingAcknowledgement("SUCCESS", passengerInfo.getFare(), UUID.randomUUID().toString().split("-")[0], passengerInfo);
